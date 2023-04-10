@@ -7,11 +7,9 @@ from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Conv2D, MaxPooling2D
 
-def create_model(size):
+def create_model(input_shape):
     
     tf.random.set_seed(42)
-    input_shape = (size[0], size[1], 1)
-
     model = Sequential(
         [
             Conv2D(16, (3,3), activation='relu', input_shape=input_shape),
