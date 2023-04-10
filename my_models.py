@@ -10,6 +10,12 @@ class MyModels():
         self.models = {}
         self.current_model = None
     
+        
+    def print_models(self):
+        """
+        Prints the list of model names.
+        """
+        print(list(self.models.keys()))
     
     def add_model(self, model_name, model):
         """
