@@ -6,6 +6,7 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Conv2D, MaxPooling2D
+from PIL import Image, ImageOps
 
 def create_model(input_shape):
     
@@ -27,3 +28,36 @@ def create_model(input_shape):
     )
     
     return model
+
+
+def load_images(directory, image_size):
+    """
+    Loads images from given directory. The images are resized to a specified 
+    size.
+
+    Args:
+        directory (string)
+        image_size (tuple)
+
+    Returns:
+        List of images (PIL Images)
+    """
+    
+    images = []
+
+    filenames = os.listdir(directory)
+    
+    for filename in filenames:
+        
+        if filename.endswith(".jpg"):
+                
+            img = Image.open(os.path.join(directory, filename))
+            
+            # resize image to specified size
+            img = ImageOps.fit(img, image_size, method=Image.LANCZOS)
+            # grayscale image
+            img = ImageOps.grayscale(img)
+            
+            images.append(img)
+    
+    return images
