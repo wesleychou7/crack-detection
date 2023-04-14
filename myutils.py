@@ -32,7 +32,7 @@ def create_model(input_shape):
 
 def load_images(directory, image_size):
     """
-    Loads images from given directory. The images are resized to a specified 
+    Loads images from given directory. The images are resized to the specified 
     size.
 
     Args:
@@ -40,7 +40,7 @@ def load_images(directory, image_size):
         image_size (tuple)
 
     Returns:
-        List of images (PIL Images)
+        List of images (PIL Images array)
     """
     
     images = []
@@ -55,9 +55,23 @@ def load_images(directory, image_size):
             
             # resize image to specified size
             img = ImageOps.fit(img, image_size, method=Image.LANCZOS)
-            # grayscale image
-            img = ImageOps.grayscale(img)
             
             images.append(img)
     
     return images
+
+
+def grayscale(images):
+    """
+    Grayscales array of PIL images.
+
+    Args:
+        images (PIL Images array)
+    """
+    gs_images = []
+    
+    for img in images:
+        # grayscale image
+        gs_images.append(ImageOps.grayscale(img))
+        
+    return gs_images
