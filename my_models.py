@@ -59,7 +59,7 @@ class MyModels():
     
     def run_and_evaluate(self, X_train, y_train, X_cv, y_cv, learning_rate, epochs):
         """
-        Run all the models and show its accuracy plot
+        Run all the models and show its train and validation accuracy plots.
         """
         fig, axes = plt.subplots(ncols=len(self.models), figsize=(12,3), sharey=True)
         fig.supylabel('Accuracy')
@@ -79,6 +79,7 @@ class MyModels():
             axes[i].set_title(model_name)
             axes[i].plot(history.history['accuracy'], label='accuracy')
             axes[i].plot(history.history['val_accuracy'], label = 'val_accuracy')
+            if i==0: axes[i].legend()
             
             cv_loss, cv_acc = model.evaluate(X_cv, y_cv, verbose=0)
             print(f"{model_name}:")
