@@ -2,11 +2,8 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import Sequential
-from keras.layers import Flatten, Dense, Conv2D, MaxPooling2D
-from keras.regularizers import l2
 
 class MyModels():
-    
     def __init__(self):
         self.models = {}
         self.current_model = None
