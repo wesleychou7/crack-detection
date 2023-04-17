@@ -2,4 +2,5 @@ Cracks in concrete and pavements, although they seemingly harmless, can graduall
 
 The objective of this program is to automatically identify the presence of cracks. Given images of concrete or pavement (or any flat surface), the program classifies them as negative (no cracks) or positive (cracks present) with an accuracy of ~93%.
 
-<img src="https://github.com/wesleychou7/crack-detection/blob/main/images/no-cracks.pngs" width="500"> <img src="https://github.com/wesleychou7/crack-detection/blob/main/images/cracks.png" width="500">
+<img src="https://github.com/wesleychou7/crack-detection/blob/main/images/no-cracks.pngs" width="500">
+<img src="https://github.com/wesleychou7/crack-detection/blob/main/images/cracks.png" width="500">
