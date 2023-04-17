@@ -1,0 +1,3 @@
+Although seemingly harmless, cracks in concrete and pavements can slowly turn into safety hazards. It is crucial to detect the cracks that may appear on the surfaces of walls, floors, and roads as early as possible. This would allow us to monitor the structural health of concrete and asphalt structures.
+
+The purpose of this program is to automatically detect the presence of cracks. Given an image of concrete or pavement, this program classifies it as negative (no cracks) or positive (has cracks), with an accuracy of ~93%.
